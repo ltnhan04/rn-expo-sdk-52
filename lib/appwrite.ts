@@ -54,8 +54,7 @@ export const login = async () => {
 
 export const logout = async () => {
   try {
-    const result = await account.deleteSession("current");
-    return result;
+    return await account.deleteSession("current");
   } catch (error) {
     console.error(error);
     return false;
