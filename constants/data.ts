@@ -163,3 +163,4 @@ export const gallery = [
     image: images.japan,
   },
 ];
+
