@@ -1,5 +1,6 @@
 import {
   ActivityIndicator,
+  Button,
   FlatList,
   Image,
   Text,
@@ -64,7 +65,7 @@ const Home = () => {
         )}
         keyExtractor={(item) => item.$id}
         contentContainerStyle={{ paddingBottom: 128 }}
-        columnWrapperStyle={{ display: "flex", gap: 5, marginTop: 5 }}
+        columnWrapperStyle={{ display: "flex", gap: 20, marginTop: 20 }}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
           loading ? (

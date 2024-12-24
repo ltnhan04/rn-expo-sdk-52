@@ -108,15 +108,15 @@ export const getLatestProperties = async () => {
   }
 };
 
-export const getProperties = async ({
-  filter,
-  query,
-  limit,
-}: {
+export const getProperties = async (params?: {
   filter: string;
   query: string;
   limit: number;
 }) => {
+  if (!params) {
+    return Promise.resolve([]);
+  }
+  const { filter, query, limit } = params;
   try {
     const buildQuery = [Query.orderDesc("$createdAt")];
 
@@ -147,3 +147,25 @@ export const getProperties = async ({
     return [];
   }
 };
+
+export async function getPropertyById(params?: { id: string }) {
+  if (!params) {
+    return Promise.resolve(null);
+  }
+
+  const { id } = params;
+  if (!id) {
+    return Promise.resolve(null);
+  }
+  try {
+    const result = await databases.getDocument(
+      config.databaseId!,
+      config.propertiesCollectionId!,
+      id
+    );
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}

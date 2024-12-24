@@ -13,7 +13,6 @@ const COLLECTIONS = {
   GALLERY: config.galleriesCollectionId,
   PROPERTY: config.propertiesCollectionId,
 };
-
 const propertyTypes = [
   "House",
   "Townhouse",
@@ -25,13 +24,7 @@ const propertyTypes = [
   "Other",
 ];
 
-const facilities = [
-  "Laundry",
-  "Parking",
-  "Gym",
-  "Wifi",
-  "Pet-friendly",
-];
+const facilities = ["Laundry", "Parking", "Gym", "Wifi", "Pet-friendly"];
 
 function getRandomSubset<T>(
   array: T[],
